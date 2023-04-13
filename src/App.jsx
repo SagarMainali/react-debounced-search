@@ -11,12 +11,12 @@ function App() {
      function handleChange(value) {
           let temp = []
           if (value) {
-               for (let index in allSearchResults) {
-                    let item = allSearchResults[index].toLowerCase() //transferring item to lowercase
-                    if (item.includes(value.toLowerCase())) {
-                         temp.push(allSearchResults[index]) //pushing untransformed item
+               allSearchResults.forEach(
+                    item => {
+                         let transformedItem = item.toLowerCase() //transform each string item to lowercase
+                         if (transformedItem.includes(value.toLowerCase())) temp.push(item) //push original untransformed item
                     }
-               }
+               )
                temp.length == 0 && temp.push('No item found')
           }
           setMatchedQueries(temp)

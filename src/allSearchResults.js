@@ -4,7 +4,7 @@ const allSearchResults = [
      'Tablets',
      'Acer',
      'Vivo',
-     'Lenevo',
+     'Lenovo',
      'Macbook',
      'Acer Nitro',
      'Macbook Air',
