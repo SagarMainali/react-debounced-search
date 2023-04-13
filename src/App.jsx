@@ -6,16 +6,15 @@ function App() {
 
      const [matchedQueries, setMatchedQueries] = useState([])
 
-     console.log(matchedQueries)
-     console.log(allSearchResults.length)
+     console.log('App rendered')
 
      function handleChange(value) {
           let temp = []
           if (value) {
-               for (let i = 0; i < allSearchResults.length; i++) {
-                    
-                    if (allSearchResults[i].includes(value)) {
-                         temp.push(allSearchResults[i])
+               for (let index = 0; index < allSearchResults.length; index++) {
+                    let item = allSearchResults[index].toLowerCase() //transferring item to lowercase
+                    if (item.startsWith(value.toLowerCase())) {
+                         temp.push(allSearchResults[index]) //pushing untransformed item
                     }
                }
           }
