@@ -3,7 +3,7 @@ import React from 'react'
 function SearchList(props) {
      return (
           <div>
-               <li>{props.item}</li>
+               <li onClick={() => console.log('Redirecting...')}>{props.item}</li>
           </div>
      )
 }
