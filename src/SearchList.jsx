@@ -1,9 +1,9 @@
 import React from 'react'
 
-function SearchList() {
+function SearchList(props) {
      return (
           <div>
-               <li></li>
+               <li>{props.item}</li>
           </div>
      )
 }

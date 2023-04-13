@@ -1,5 +1,48 @@
 *{
      margin: 0;
      box-sizing: border-box;
+     /* border: 1px solid gray; */
 }
+
+body{
+     padding: 10px;
+     background-color: black;
+}
+
+.flex{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+
+input{
+     width: 500px;
+     padding: 10px;
+     border: 2px solid gray;
+     font-size: 16px;
+     letter-spacing: .4px;
+     color: rgb(32, 32, 32);
+     outline: none;
+}
+
+ul{
+     padding: 0;
+     border-radius: 8px;
+     overflow: hidden;
+     background-color: white;
+     margin-top: 4px;
+}
+
+li{
+     width: 500px;
+     list-style: none;
+     padding: 10px;
+}
+
+li:hover{
+     background-color: lightgray;
+     cursor: pointer;
+}
+
+
 
