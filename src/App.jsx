@@ -13,7 +13,7 @@ function App() {
           if (value) {
                for (let index = 0; index < allSearchResults.length; index++) {
                     let item = allSearchResults[index].toLowerCase() //transferring item to lowercase
-                    if (item.startsWith(value.toLowerCase())) {
+                    if (item.includes(value.toLowerCase())) {
                          temp.push(allSearchResults[index]) //pushing untransformed item
                     }
                }
