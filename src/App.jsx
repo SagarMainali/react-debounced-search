@@ -27,10 +27,22 @@ function App() {
           setMatchedQueries(temp.length > 5 ? temp.slice(0, 10) : temp) //pass array by slicing to prevent rendering large number of data
      }
 
+     function debounce(callback, delay) {
+          let timer
+          return function (...args) {
+               clearTimeout(timer)
+               timer = setTimeout(
+                    () => callback(...args), delay
+               )
+          }
+     }
+
+     const debouncedhandleChange = debounce(handleChange, 600)
+
      return (
           <div className='container'>
                <div className="header flex">
-                    <input type="text" placeholder='Search' onChange={(event) => handleChange(event.target.value)} />
+                    <input type="text" placeholder='Search' onChange={(event) => debouncedhandleChange(event.target.value)} />
                </div>
                <div className="content flex">
                     <ul>
