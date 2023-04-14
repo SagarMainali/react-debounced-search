@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import SearchList from './SearchList'
 import allSearchResults from './allSearchResults'
+import SearchListItem from './Components/SearchListItem/SearchListItem'
 
 function App() {
 
      const [matchedQueries, setMatchedQueries] = useState([])
+     const [searchQuery, setSearchQuery] = useState('')
 
      console.log('App rendered')
 
@@ -15,6 +16,7 @@ function App() {
      function handleChange(value) {
           let temp = []
           if (value) {
+               setSearchQuery(value)
                allSearchResults.forEach(
                     item => {
                          let transformedItem = item.toLowerCase() //transform each string item to lowercase
@@ -46,7 +48,7 @@ function App() {
                </div>
                <div className="content flex">
                     <ul>
-                         {matchedQueries.map(item => <SearchList key={item} item={item} />)}
+                         {matchedQueries.map(item => <SearchListItem key={item} item={item} searchQuery={searchQuery} />)}
                     </ul>
                </div>
           </div>
